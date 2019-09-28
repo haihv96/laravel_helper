@@ -1,0 +1,16 @@
+{
+    "name": "root/src",
+    "description": "Helper For Laravel",
+    "type": "metapackage",
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "^5.5"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "LModules\\Helpers\\": "packages/lmodules/helpers/src"
+        }
+    }
+}
