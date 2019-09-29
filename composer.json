@@ -1,5 +1,5 @@
 {
-    "name": "laramod/helper",
+    "name": "phpmod/laravel-helper",
     "description": "Helper For Laravel",
     "type": "library",
     "license": "MIT",
