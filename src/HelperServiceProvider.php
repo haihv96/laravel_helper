@@ -1,6 +1,6 @@
 <?php
 
-namespace LModules\Helpers;
+namespace PhpMod\LaravelHelper;
 
 use Illuminate\Support\ServiceProvider;
 

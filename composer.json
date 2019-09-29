@@ -3,6 +3,12 @@
     "description": "Helper For Laravel",
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "haihv",
+            "email": "hai.hp.96@gmail.com"
+        }
+    ],
     "require": {
         "laravel/framework": "^5.5"
     },
@@ -10,7 +16,14 @@
     },
     "autoload": {
         "psr-4": {
-            "LModules\\Helpers\\": "packages/lmodules/helpers/src"
+            "PhpMod\\LaravelHelper\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PhpMod\\LaravelHelper\\HelperServiceProvider"
+            ]
         }
     }
 }
