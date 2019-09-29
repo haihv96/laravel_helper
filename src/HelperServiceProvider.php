@@ -4,7 +4,7 @@ namespace PhpMod\LaravelHelper;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class HelperServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -13,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        foreach (glob(__DIR__ . '/helpers/*.php') as $helperDir) {
+        $helperDirs = glob(app_path('Vendor/PhpMod/LaravelHelper/*.php'));
+        if (!empty($publishHelperPaths)) {
+            $helperDirs = glob(__DIR__ . '/helpers/*.php');
+        }
+        foreach ($helperDirs as $helperDir) {
             require_once($helperDir);
         }
     }
@@ -25,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__ . '/helpers/' => app_path('Vendor/PhpMod/LaravelHelper/')
+        ]);
     }
 }
